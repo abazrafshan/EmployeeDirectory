@@ -1,0 +1,17 @@
+.heading {
+    margin-top: 3%;
+    position: absolute;
+    top: 0;
+    height: 10%;
+    color: darkblue;
+    background-size: cover;
+    text-align: center;
+    align-content: center;
+}
+
+.container-fluid {
+    /* background-color: darkblue; */
+    justify-content: center;
+    text-align: center;
+    align-content: center;
+}

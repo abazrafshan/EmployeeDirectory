@@ -1,12 +1,14 @@
 .heading {
     margin-top: 3%;
-    position: absolute;
+    position: sticky;
     top: 0;
     height: 10%;
     color: darkblue;
     background-size: cover;
-    text-align: center;
-    align-content: center;
+    /* text-align: center;
+    align-content: center; */
+    float: inline-start;
+    vertical-align: middle;
 }
 
 .container-fluid {

@@ -7,6 +7,7 @@ class SearchResults extends Component {
         return this.props.filteredResult.map(results => (
             <Table                 
             key={results.login.uuid}
+            image={results.picture.thumbnail}
             firstName = {results.name.first}
             lastName = {results.name.last}
             phone = {results.phone}

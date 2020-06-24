@@ -1,20 +1,29 @@
-import React, { Component } from "react";
+import React, {Component} from "react";
 import "./style.css";
+import Table from "../Table"
 
-function SearchResults(props) {
-    return (
+class SearchResults extends Component {
+    Map() {
+        return this.props.filteredResult.map(results => (
+            <Table                 
+            key={results.login.uuid}
+            firstName = {results.name.first}
+            lastName = {results.name.last}
+            phone = {results.phone}
+            dob = {results.dob.date}
+            />
+        ))
+        }
+        
+    render(){
+        console.log(this.Map())
+  return (
         <ul className="list-group">
-            {props.results.map(results => (
-                <li key={results} className="list-group-item">
-                    <img alt="employee" src={results.picture.thumbnail} className="img=fluid"/>
-                    <p>{results.name.first + " "} {results.name.last}</p>
-                    <p>{results.phone}</p>
-                    <p>{results.email}</p>
-                    <p>{results.dob.date}</p>
-                </li>
-            ))}
+           {this.Map()}
         </ul>
     );
+    }
+
 }
 
 export default SearchResults;

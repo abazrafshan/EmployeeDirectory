@@ -1,13 +1,13 @@
-import React from "react";
+import React, {Component} from "react";
 import "./style.css";
 
-function SearchForm({handleInputChange}) {
-    return (
+class SearchForm extends Component {
+    render(){
+        return (
         <form className="inputcenter">
             <div className="searchform">
                 <input 
-                onChange={e => handleInputChange(e)}
-                name="employeename"
+                onChange={this.props.handleInputChange}
                 type="text"
                 className="form-control"
                 placeholder="Search"
@@ -17,5 +17,6 @@ function SearchForm({handleInputChange}) {
         </form>
     );
 }
-
+}
+    
 export default SearchForm;

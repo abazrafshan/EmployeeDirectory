@@ -6,41 +6,32 @@ import API from "../../utils/API";
 
 class MainContainer extends Component {
     state = {
-        // numberofresults: 200,
         result: [],
         search: [],
-        filteredResult: []
+        filteredResult: []        
     };
 
-    componentDidMount(){
+    start(){
         API.getRandomEmployee()
         .then(res =>{ 
             this.setState({ 
-                result: res.data,
-                filteredResult: res.data
+                result: res.data.results,
+                filteredResult: this.state.result
             })
-        // .catch(err => console.log(err));
-        console.log(res.data)
+            // console.log(this.state.result.name[0].first)
+        console.log(this.state.result)
     })       
     }
 
-    // searchEmployees = query => {
-    //     API.getSpecificEmployee(query)
-    //     .then(res => {
-    //         this.setState({
-    //         result: res.data.results
-    //     })
-    //     // .catch(err => console.log(err));
-    //     console.log(res.data.results)
-    // })
-    // }
+    componentDidMount(){
+        this.start();
+        // console.log(this.state.result[0].name.first)
+    }
 
     handleInputChange = event => {
         const value = event.target.value;
-        const name = event.target.name;
-        // console.log(name)
+        // const name = event.target.name;
         console.log(value)
-        console.log(this.state.result.results)
         this.setState({
             filteredResult: this.state.result
         });
@@ -51,18 +42,14 @@ class MainContainer extends Component {
             <div>
             <Heading/>
             <SearchForm handleInputChange={this.handleInputChange}/>
-            {this.state.result.results.name ? (
                 <SearchResults
-                // image = {this.state.result.results.image}
-                name = {this.state.result.results.name}
-                // phone={this.state.result.results.phone}
-                // email={this.state.result.results.email}
-                // dob={this.state.result.results.dob}
+                result={this.state.result}
+                filteredResult={this.state.filteredResult}
                 handleInputChange={this.handleInputChange}
                 />
-            ) : (
+             {/* : (
                 <h3>No employees to display</h3>
-            )}
+            )} */}
             </div>
         );
     }

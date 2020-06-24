@@ -1,13 +1,12 @@
-import React, { Component } from "react";
+import React from "react";
 import "./style.css";
 
-function SearchForm(props) {
+function SearchForm({handleInputChange}) {
     return (
         <form className="inputcenter">
             <div className="searchform">
                 <input 
-                value = {props.search}
-                onChange={props.handleInputChange}
+                onChange={e => handleInputChange(e)}
                 name="employeename"
                 type="text"
                 className="form-control"

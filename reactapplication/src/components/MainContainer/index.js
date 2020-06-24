@@ -16,27 +16,26 @@ class MainContainer extends Component {
         .then(res =>{ 
             this.setState({ 
                 result: res.data.results,
-                filteredResult: this.state.result
+                filteredResult: res.data.results
             })
-            // console.log(this.state.result.name[0].first)
         console.log(this.state.result)
     })       
     }
 
     componentDidMount(){
-        this.start();
-        // console.log(this.state.result[0].name.first)
+        this.start(this.state.filteredResult);
     }
 
     handleInputChange = event => {
-        const value = event.target.value;
-        // const name = event.target.name;
+        const value = event.target.value.toLowerCase();
         console.log(value)
         this.setState({
-            filteredResult: this.state.result
+            filteredResult: this.state.result.filter(a => {
+                return a.name.first.toLowerCase().includes(value) || a.name.last.toLowerCase().includes(value)
+            })
         });
     };
-
+    
     render(){
         return (
             <div>
@@ -47,9 +46,6 @@ class MainContainer extends Component {
                 filteredResult={this.state.filteredResult}
                 handleInputChange={this.handleInputChange}
                 />
-             {/* : (
-                <h3>No employees to display</h3>
-            )} */}
             </div>
         );
     }

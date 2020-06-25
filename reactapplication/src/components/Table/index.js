@@ -1,8 +1,8 @@
 import React, {Component} from "react";
 // import "./style.css";
+import TableHeader from "../TableHeader/index";
 
-class Table extends Component {
-    render(){
+function Table(props) {
     return (
         <table>
             <thead>
@@ -14,17 +14,20 @@ class Table extends Component {
                     <th scope="col">DOB</th>
                 </tr>
             </thead>
+{/* <TableHeader/> */}
             <tbody>
+            {this.props.filteredResult.map(result => (
                 <tr>
-                    <td><img alt ="check" src={this.props.image}></img></td>
-                    <td>{this.props.firstName} {this.props.lastName}</td>
-                    <td>{this.props.phone}</td>
-                    <td>{this.props.email}</td>
-                    <td>{this.props.dob}</td></tr>
+                    <td><img alt ="check" src={result.image}></img></td>
+                    <td>{result.firstName} {result.lastName}</td>
+                    <td>{result.phone}</td>
+                    <td>{result.email}</td>
+                    <td>{result.dob}</td></tr>
+            ))}
             </tbody>
         </table>
         )
-    }
+    
 }
 
 

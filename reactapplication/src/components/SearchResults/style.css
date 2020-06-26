@@ -1,3 +1,5 @@
-/* searchResults {
-
-} */
+table {
+    table-layout: fixed;
+    width: 90%;
+    margin-left: 5%;
+}

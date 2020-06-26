@@ -20,7 +20,7 @@ function SearchResults(props) {
             return (
                <Table key={i}
                 image={item.picture.thumbnail}
-                name={item.name.first+item.name.last}
+                name={item.name.first+" "+item.name.last}
                 phone={item.phone}
                 email={item.email}
                 dob={item.dob} /> 

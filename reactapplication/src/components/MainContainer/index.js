@@ -24,11 +24,11 @@ class MainContainer extends Component {
             })
     })}
 
-    handleClick = () => this.state.filteredResult.sort((a, b) => {
+    handleClick = () => this.setState(this.state.filteredResult.sort((a, b) => {
         if (a.name.first < b.name.first) return -1;
         if (a.name.first > b.name.first) return 1;
         return 0;
-    });
+    }));
     
 
     

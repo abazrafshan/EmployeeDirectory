@@ -1,6 +1,7 @@
 import React, {Component} from "react";
 import "./style.css";
 
+// Search bar for user to input first and/or last names to query
 class SearchForm extends Component {
     render(){
         return (

@@ -1,6 +1,7 @@
 import React from "react";
 import "./style.css";
 
+// Component for jumbotron heading
 function Heading(){
     return (
         <div className="jumbotron jumbotron-fluid">

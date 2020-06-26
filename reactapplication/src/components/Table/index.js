@@ -1,7 +1,7 @@
 import React from "react";
 
 function Table(props){
-    console.log(props)
+    // console.log(props)
     return (
             <tr key={props.email}>
                 <td key={1}><img alt ="check" src={props.image} /></td>

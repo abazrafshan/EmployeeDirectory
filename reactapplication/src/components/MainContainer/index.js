@@ -20,10 +20,18 @@ class MainContainer extends Component {
                 result: res.data.results,
                 filteredResult: res.data.results
             },()=> {
-                console.log(this.state.result)
+                // console.log(this.state.result)
             })
-    })       
-    }
+    })}
+
+    handleClick = () => this.state.filteredResult.sort((a, b) => {
+        if (a.name.first < b.name.first) return -1;
+        if (a.name.first > b.name.first) return 1;
+        return 0;
+    });
+    
+
+    
     // start method called to fetch data from API after all elements on page rendered 
     componentDidMount(){
         this.start(this.state.filteredResult);
@@ -44,6 +52,7 @@ class MainContainer extends Component {
             <Heading/>
             <SearchForm handleInputChange={this.handleInputChange}/>
                 <SearchResults
+                sort={this.handleClick}
                 results={this.state.result}
                 filteredResult={this.state.filteredResult}
                 handleInputChange={this.handleInputChange}

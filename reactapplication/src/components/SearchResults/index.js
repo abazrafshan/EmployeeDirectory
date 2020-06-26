@@ -11,7 +11,7 @@ function SearchResults(props) {
           <thead>
             <tr>
               <th>Image</th>
-              <th>Name</th>
+              <th onClick={props.sort}>Name</th>
               <th>Phone</th>
               <th>Email</th>
               <th>Date of Birth</th>

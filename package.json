@@ -1,6 +1,6 @@
 {
-  "homepage": "http://abazrafshan.github.io/reactapplication",
-  "name": "reactapplication",
+  "homepage": "http://abazrafshan.github.io/EmployeeDirectory",
+  "name": "employeedirectory",
   "version": "0.1.0",
   "private": true,
   "dependencies": {

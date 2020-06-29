@@ -22,8 +22,8 @@ If you have any questions about the repo, open an issue or contact [abazrafshan]
 
 ## Links
 
-Link to deployed application: 
-Link to Github repo: (https://github.com/abazrafshan/EmployeeDirectory)
+Link to deployed application: https://abazrafshan.github.io/EmployeeDirectory/
+Link to Github repo: https://github.com/abazrafshan/EmployeeDirectory
 
 ## Screenshot
 
